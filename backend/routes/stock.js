@@ -13,7 +13,7 @@ router.get('/', function (req, res, next) {
   console.log(stockType);
 
   var connection = mysql.createConnection({
-    host     : 'localhost',
+    host     : '106.10.46.238',
     user     : 'root',
     password : 'l1002212$$',
     database : 'stock'
@@ -22,7 +22,9 @@ router.get('/', function (req, res, next) {
   connection.query('SELECT * FROM company WHERE market_type = ?',[stockType], function (error, results, fields) {
     
     // console.log('The solution is: ', results[0]);
-    
+    if(error){
+      console.log(error);
+    }
     res.send(results);
 
   });
@@ -38,7 +40,7 @@ router.get('/:id',function(req,res,next){
   var cp_code = req.params.id;
 
   var connection = mysql.createConnection({
-    host     : 'localhost',
+    host     : '106.10.46.238',
     user     : 'root',
     password : 'l1002212$$',
     database : 'stock'
@@ -59,7 +61,7 @@ router.get('/:id/finance',function(req,res,next){
   var cp_code = req.params.id;
 
   var connection = mysql.createConnection({
-    host     : 'localhost',
+    host     : '106.10.46.238',
     user     : 'root',
     password : 'l1002212$$',
     database : 'stock'
