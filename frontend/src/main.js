@@ -13,6 +13,7 @@ Vue.prototype.$http = axios
 Vue.config.productionTip = false
 
 const vuetifyOptions = { }
+
 Vue.use(Vuetify)
 
 /* eslint-disable no-new */
